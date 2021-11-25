@@ -5,7 +5,11 @@
         <div>
             <p><b>Date:</b> {{ event.date }} <b>Name:</b> {{ event.name }}
             <b>Number of guests:</b> {{ event.number_of_guests }} <b>Location:</b> {{ event.room_location }}
-            <b>Description:</b> {{ event.description }}</p><hr>
+            <b>Description:</b> {{ event.description }}</p>
+            {% if event.recurring %}
+                <span>Recurring: ✅</span>
+            {% endif %}
+            <hr>
         </div>
     {% endfor %}
 {% endblock content %}
